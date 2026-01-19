@@ -360,30 +360,39 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive - Ajustements légers uniquement */
+.customLink {
+    color: #00ffff;
+    text-decoration: none;
+    border-bottom: 2px solid #00ffff;
+    transition: all 0.3s;
+}
+
+.customLink:hover {
+    color: #ff00ff;
+    border-bottom-color: #ff00ff;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+}
+
 @media (max-width: 768px) {
 
-    /* Réduction légère du padding pour optimiser l'espace */
     header {
         padding: 1rem 0.5rem;
     }
 
     .colored_title {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         margin-bottom: 1rem;
         background: linear-gradient(45deg, #00ffff, #ff00ff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         animation: glow 2s ease-in-out infinite;
-
     }
 
     .section {
         padding: 1.5rem 1rem;
     }
 
-    /* Navigation reste flexible */
     nav {
         gap: 0.5rem;
     }
@@ -392,19 +401,18 @@ footer {
         font-size: 0.6rem;
     }
 
-    /* Toast centré en bas sur mobile */
     .toast {
         right: 1rem;
         left: 1rem;
         text-align: center;
     }
 
-    /* Textes légèrement réduits */
     .hero h1 {
         font-size: 1rem;
     }
 
     h1,
+    h2,
     h3 {
         font-size: 1em;
     }
@@ -427,9 +435,32 @@ footer {
         font-size: 0.8em;
     }
 
+    .project-card {
+        background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
+        padding: 1rem;
+        border-radius: 15px;
+        border: 2px solid rgba(0, 255, 255, 0.2);
+        transition: all 0.4s;
+        position: relative;
+        overflow: hidden;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .project-card h3 {
+        color: #00ffff;
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+    }
+
+    .project-card p {
+        color: #ccc;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+
     .social-links {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 1rem;
         margin-top: 2rem;
     }
@@ -443,5 +474,9 @@ footer {
         border-radius: 10px;
         transition: all 0.3s;
         text-align: center;
+    }
+
+    img {
+        display: none;
     }
 }
