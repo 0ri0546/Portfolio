@@ -40,3 +40,22 @@ document.querySelectorAll('.skill-card, .project-card').forEach(el => {
     el.style.transition = 'all 0.6s ease-out';
     observer.observe(el);
 });
+
+function copyDiscord(e) {
+    e.preventDefault();
+    const discordUsername = 'username#1234'; // Remplace par ton Discord
+    
+    navigator.clipboard.writeText(discordUsername).then(() => {
+        showToast('Discord copié dans le presse-papier !');
+    });
+}
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.add('show');
+    
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2000);
+}
