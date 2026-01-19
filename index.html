@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Lucas Marcucci</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <header>
+        <h2 class="colored_title">Lucas Marcucci - Portfolio</h2>
+        <nav>
+            <a href="#about">À Propos</a>
+            <a href="#skills">Compétences</a>
+            <a href="#projects">Projets</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1 class="colored_title">Développeur de Jeux Vidéo</h1>
+        <p
+            style="text-align: center; font-size: 1.1rem; line-height: 1.8; color: #ccc; max-width: 800px; margin: 0 auto;">
+            Passionné par l'univers du jeu vidéo depuis mon enfance,
+            je consacre aujourd'hui mon énergie à transformer cette passion
+            en expertise professionnelle. Mon objectif est de créer des expériences
+            interactives qui captivent les joueurs, les immergent dans des univers
+            mémorables et leur offrent des moments de gameplay inoubliables.
+            Chaque ligne de code que j'écris, chaque mécanique que je conçois,
+            est pensée pour susciter l'émotion et l'engagement.</p>
+    </div>
+
+    <div class="section" id="about">
+        <h2>À Propos</h2>
+        <p
+            style="text-align: center; font-size: 1.1rem; line-height: 1.8; color: #ccc; max-width: 800px; margin: 0 auto;">
+            Étudiant en 2ème année au Gaming Campus, je développe mes compétences en programmation de jeux vidéo.
+            Curieux et motivé, j'apprends constamment de nouvelles technologies et je cherche à créer des expériences
+            de jeu originales et captivantes. Mon objectif est de devenir un développeur polyvalent capable de
+            travailler sur tous les aspects de la création d'un jeu.
+        </p>
+    </div>
+
+    <div class="section skill-box" id="skills">
+        <h2>Compétences</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>C++</h3>
+                <p>Programmation orientée objet, librairie SFML</p>
+            </div>
+            <div class="skill-card">
+                <h3>Unreal Engine</h3>
+                <p>Blueprints, multiplayer</p>
+            </div>
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Algorithmes, pygame, tkinter, turtle/canva</p>
+            </div>
+            <div class="skill-card">
+                <h3>Git</h3>
+                <p>Versioning, travail collaboratif, gestion de branches</p>
+            </div>
+            <div class="skill-card">
+                <h3>Web Design</h3>
+                <p>HTML5, CSS3, JavaScript, responsive design et interfaces utilisateur modernes</p>
+            </div>
+            <div class="skill-card">
+                <h3>Blender</h3>
+                <p>Modélisation 3D, texturing et rendering pour le jeu vidéo</p>
+            </div>
+            <div class="skill-card">
+                <h3>Canva</h3>
+                <p>Design graphique, création de visuels, présentations</p>
+            </div>
+            <div class="skill-card">
+                <h3>VS Code</h3>
+                <p>Environnement de développement, extensions, debugging et gestion de projets</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="projects">
+        <h2>Projets</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>GPS pathfinding</h3>
+                <p>Visualisateur de pathfinding développé en C++ avec ImGui et SFML. <br>
+                    Algorithmes : <br>
+                    - A*, <br>
+                    - Dijkstra, <br>
+                    - BFS.
+                </p>
+                <img src="assets/GPSPathfinding.png" alt="">
+                <div class="tech-tags">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">SFML</span>
+                    <span class="tech-tag">ImGui</span>
+                    <span class="tech-tag">Algo</span>
+                    <span class="tech-tag">2D</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Arena Shooter</h3>
+                <p>Projet interdisciplinaire en colaboration avec des artistes de Gaming Campus. <br>
+                    Arena shooter en 3D avec Unreal Engine 5 à la première personne, avec des ennemis, des armes différentes et un boss final.
+                </p>
+                <img src="assets/UnrealEngine.png" alt="">
+                <div class="tech-tags">
+                    <span class="tech-tag">Unreal Engine</span>
+                    <span class="tech-tag">Blueprints</span>
+                    <span class="tech-tag">AI</span>
+                    <span class="tech-tag">Git</span>
+                    <span class="tech-tag">3D</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Web site Mordekdrums</h3>
+                <p>Création du site internet vitrine de Mordekdrums : <a href='https://mordekdrums.onrender.com/'>Mordekdrums</a>. <br>
+                    Projet réalisé seul avec des consignes claires et détaillées.
+                </p>
+                <img src="assets/MordekdrumsWebSite.jpg" alt="">
+                <div class="tech-tags">
+                    <span class="tech-tag">HTML</span>
+                    <span class="tech-tag">CSS</span>
+                    <span class="tech-tag">JS</span>
+                    <span class="tech-tag">Render</span>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Épées 3D</h3>
+                <p>Modélisations d'épées en 3D sur Blender. Low Poly, retopologie et texturing, ainsi qu'importation sur Unreal Engine 5.
+                </p>
+                <img src="assets/Blender.png" alt="">
+                <div class="tech-tags">
+                    <span class="tech-tag">Unreal Engine</span>
+                    <span class="tech-tag">Blueprints</span>
+                    <span class="tech-tag">AI</span>
+                    <span class="tech-tag">Git</span>
+                    <span class="tech-tag">3D</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+        <h2>Contact</h2>
+        <p style="color: #ccc;">Intéressé par une collaboration ou un projet ? N'hésitez pas à me contacter !</p>
+        <div class="social-links">
+            <a href="mailto:lmarcucci@gaming.tech">Email</a>
+            <a href="https://www.linkedin.com/in/lucas-marcucci-230151334/">LinkedIn</a>
+            <a href="https://github.com/0ri0546">GitHub</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Portfolio Gaming Campus | Développé avec passion</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
