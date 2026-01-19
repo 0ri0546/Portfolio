@@ -317,7 +317,7 @@ img {
 
 .social-links a {
     color: #00ffff;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-decoration: none;
     padding: 1rem 2rem;
     border: 2px solid #00ffff;
@@ -373,7 +373,7 @@ footer {
     text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     header {
         padding: 1rem 0.5rem;
