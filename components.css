@@ -178,3 +178,89 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    /* Header plus compact */
+    header {
+        padding: 1rem;
+    }
+    
+    /* Navigation en une ligne avec boutons plus petits */
+    nav {
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    
+    nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Grilles en 2 colonnes pour compétences */
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+    }
+    
+    /* Grilles en 2 colonnes pour projets */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+    }
+    
+    /* Cards plus compactes */
+    .skill-card {
+        padding: 1rem;
+    }
+    
+    .project-card {
+        padding: 1rem;
+    }
+    
+    .project-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .project-card p {
+        font-size: 0.85rem;
+    }
+    
+    /* Social links en 2 colonnes */
+    .social-links {
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .social-links a {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+    
+    /* Toast responsive */
+    .toast {
+        bottom: 1rem;
+        right: 1rem;
+        left: 1rem;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .skill-card h3,
+    .project-card h3 {
+        font-size: 1rem;
+    }
+    
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.6rem;
+    }
+}
