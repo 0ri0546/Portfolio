@@ -71,6 +71,9 @@ nav a:hover {
     transition: all 0.4s;
     position: relative;
     overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card::before {
@@ -128,6 +131,47 @@ img {
     border-radius: 20px;
     font-size: 0.85rem;
     border: 1px solid #ff00ff;
+}
+
+/* Date Tags */
+.date-tag {
+    display: block;
+    width: fit-content;
+    position: relative;
+
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+
+    background: #0a0e27;
+    color: #00ffff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 1px;
+    font-size: 0.85rem;
+    border: 1px solid #00ffff;
+}
+
+/* Tooltip */
+.date-tag::after {
+    content: "Dernier commit le " attr(data-date);
+    position: absolute;
+    bottom: 120%; /* au-dessus */
+    right: 0;
+
+    background: #000;
+    color: #fff;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+
+    opacity: 0;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.date-tag:hover::after {
+    opacity: 1;
 }
 
 /* Social Links */
