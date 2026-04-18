@@ -2,7 +2,9 @@ const particlesContainer = document.getElementById('particles');
 for (let i = 0; i < 50; i++) {
     const particle = document.createElement('div');
     particle.className = 'particle';
+    particle.style.bottom = Math.random() * 20 + '%';
     particle.style.left = Math.random() * 100 + '%';
+    particle.style.opacity = '0';
     particle.style.animationDelay = Math.random() * 20 + 's';
     particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
     particlesContainer.appendChild(particle);
