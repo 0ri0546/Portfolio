@@ -32,3 +32,34 @@ p {
 a {
     text-decoration: none;
 }
+
+.typing-container {
+    max-width: 800px;
+    margin: 40px auto;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+#typing-paragraph {
+    width: 100%;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.cursor {
+    color: #3b82f6;
+    font-weight: bold;
+    display: inline-block;
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}

@@ -118,3 +118,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+const fullText = `Étudiant en 2ème année au Gaming Campus, je me forme au développement de jeux vidéo avec une approche volontairement généraliste : gameplay programming, moteurs custom, multijoueur, outils, 3D... Je crois qu'un bon développeur doit comprendre l'ensemble d'un projet, pas seulement sa petite brique. Ce qui me motive, c'est de construire des choses qui fonctionnent vraiment, que ce soit un moteur 3D en OpenGL, un jeu bouclé en 39h lors d'une Game Jam, ou un petit outil utilitaire que j'utilise moi-même au quotidien. Chaque projet est une occasion d'apprendre quelque chose de nouveau et de me pousser un peu plus loin. Curieux par nature, j'aime autant plonger dans les bas niveaux du code que collaborer avec des artistes pour livrer une expérience de jeu complète. Mon objectif : devenir un développeur polyvalent, capable de s'adapter à n'importe quel contexte et de contribuer à chaque étape de la création d'un jeu. `;
+
+const displayElement = document.getElementById('typing-paragraph');
+let index = 0;
+
+function typeFullParagraph() {
+    if (index < fullText.length) {
+        // On utilise textContent pour le texte et on ajoute le curseur en HTML
+        displayElement.textContent = fullText.substring(0, index + 1);
+        
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+        cursor.textContent = '|';
+        displayElement.appendChild(cursor);
+        
+        index++;
+        setTimeout(typeFullParagraph, 30);
+    }
+}
+
+window.addEventListener('load', typeFullParagraph);
