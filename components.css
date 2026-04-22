@@ -73,6 +73,80 @@ nav a:hover {
     border-radius: 10px;
 }
 
+/* Search Bar */
+#search-bar {
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: rgba(26, 26, 46, 0.7);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+#search-input::placeholder {
+    color: #888;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    color: #00ffff;
+    font-size: 1.2rem;
+    pointer-events: none;
+}
+
+#clear-search {
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 0, 255, 0.2);
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+    color: #ff00ff;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+#clear-search:hover {
+    background: #ff00ff;
+    color: #0a0e27;
+    transform: scale(1.05);
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.no-results {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+    padding: 3rem;
+    grid-column: 1 / -1;
+}
+
 /* Project Cards */
 .project-card {
     background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
