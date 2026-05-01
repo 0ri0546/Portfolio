@@ -139,37 +139,41 @@ function typeFullParagraph() {
 
 window.addEventListener('load', typeFullParagraph);
 
-/*Konami easter egg */
-const konamiCode = [
-    'ArrowUp', 'ArrowUp', 
-    'ArrowDown', 'ArrowDown', 
-    'ArrowLeft', 'ArrowRight', 
-    'ArrowLeft', 'ArrowRight', 
-    'b', 'a'
-];
-
+/* Konami easter egg */
+const konamiCode = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
 let currentPosition = 0;
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === konamiCode[currentPosition]) {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        return; 
+    }
+
+    const key = e.key.toLowerCase();
+    const target = konamiCode[currentPosition];
+
+    if (key === target) {
         currentPosition++;
+        
+        if (key.includes('arrow')) e.preventDefault();
 
         if (currentPosition === konamiCode.length) {
-            activateKonamiMode();
+            activateKonami();
             currentPosition = 0;
+            return;
         }
     } else {
-        currentPosition = 0;
+        currentPosition = (key === konamiCode[0]) ? 1 : 0;
     }
+    
+    console.log(`Progression Konami : ${currentPosition}/${konamiCode.length}`);
 });
 
-function activateKonamiMode() {
+function activateKonami() {
+    console.log("🎯 CODE KONAMI VALIDÉ !");
     document.body.classList.toggle('konami-active');
-
-    sfxKonami.currentTime = 0;
-    sfxKonami.play().catch(e => console.log("Audio bloqué par le navigateur : ", e));
     
-    console.log("%c 🎮 KONAMI MODE ACTIVATED ! %c", 
-                "background: #ff00ff; color: white; font-weight: bold; padding: 5px;", 
-                "color: #00ffff; font-weight: bold;");
+    if (sfxKonami) {
+        sfxKonami.currentTime = 0;
+        sfxKonami.play().catch(err => console.log("L'audio attend une interaction :", err));
+    }
 }
