@@ -1,0 +1,27 @@
+/* Animation arc-en-ciel pour les bordures */
+@keyframes neon-rainbow {
+    0% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; }
+    20% { border-color: #ff00ff; box-shadow: 0 0 15px #ff00ff; }
+    40% { border-color: #0000ff; box-shadow: 0 0 15px #0000ff; }
+    60% { border-color: #00ffff; box-shadow: 0 0 15px #00ffff; }
+    80% { border-color: #00ff00; box-shadow: 0 0 15px #00ff00; }
+    100% { border-color: #ff0000; box-shadow: 0 0 15px #ff0000; }
+}
+
+/* Quand le code est activé */
+.konami-active .project-card, 
+.konami-active .skill-card {
+    animation: neon-rainbow 2s linear infinite !important;
+    border-width: 3px !important;
+}
+
+/* Petit bonus : fait tourner les icônes bento */
+.konami-active .bento-icon {
+    opacity: 0.8 !important;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

@@ -1,3 +1,7 @@
+const sfxKonami = new Audio('assets/konamiSound.mp3');
+sfxKonami.preload = 'auto';
+sfxKonami.volume = 0.4;
+
 const particlesContainer = document.getElementById('particles');
 for (let i = 0; i < 50; i++) {
     const particle = document.createElement('div');
@@ -43,11 +47,10 @@ document.querySelectorAll('.skill-card, .project-card').forEach(el => {
     observer.observe(el);
 });
 
-// Search Bar Functionality
+// Search Bar
 document.addEventListener('DOMContentLoaded', function() {
     const searchBarContainer = document.getElementById('search-bar');
     
-    // Créer la search bar
     searchBarContainer.innerHTML = `
         <div class="search-container">
             <i class="bi bi-search search-icon"></i>
@@ -66,14 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
         let visibleCount = 0;
 
         projectCards.forEach(card => {
-            // Récupérer le titre (h3)
             const title = card.querySelector('h3').textContent.toLowerCase();
             
-            // Récupérer tous les tags
             const tags = Array.from(card.querySelectorAll('.tech-tag'))
                 .map(tag => tag.textContent.toLowerCase());
             
-            // Vérifier si le terme de recherche correspond au titre ou à un tag
             const matchesTitle = title.includes(searchTerm);
             const matchesTags = tags.some(tag => tag.includes(searchTerm));
 
@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Afficher un message si aucun résultat
         let noResultsMessage = projectsGrid.querySelector('.no-results');
         if (visibleCount === 0 && searchTerm !== '') {
             if (!noResultsMessage) {
@@ -126,7 +125,6 @@ let index = 0;
 
 function typeFullParagraph() {
     if (index < fullText.length) {
-        // On utilise textContent pour le texte et on ajoute le curseur en HTML
         displayElement.textContent = fullText.substring(0, index + 1);
         
         const cursor = document.createElement('span');
@@ -140,3 +138,38 @@ function typeFullParagraph() {
 }
 
 window.addEventListener('load', typeFullParagraph);
+
+/*Konami easter egg */
+const konamiCode = [
+    'ArrowUp', 'ArrowUp', 
+    'ArrowDown', 'ArrowDown', 
+    'ArrowLeft', 'ArrowRight', 
+    'ArrowLeft', 'ArrowRight', 
+    'b', 'a'
+];
+
+let currentPosition = 0;
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === konamiCode[currentPosition]) {
+        currentPosition++;
+
+        if (currentPosition === konamiCode.length) {
+            activateKonamiMode();
+            currentPosition = 0;
+        }
+    } else {
+        currentPosition = 0;
+    }
+});
+
+function activateKonamiMode() {
+    document.body.classList.toggle('konami-active');
+
+    sfxKonami.currentTime = 0;
+    sfxKonami.play().catch(e => console.log("Audio bloqué par le navigateur : ", e));
+    
+    console.log("%c 🎮 KONAMI MODE ACTIVATED ! %c", 
+                "background: #ff00ff; color: white; font-weight: bold; padding: 5px;", 
+                "color: #00ffff; font-weight: bold;");
+}
