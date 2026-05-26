@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="components.css">
     <link rel="stylesheet" href="layout.css">
     <link rel="stylesheet" href="konami.css">
+    <link rel="stylesheet" href="readmore.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
@@ -115,246 +116,324 @@
     <div class="section" id="projects">
         <h2><i class="bi bi-file-earmark-code"></i> Projets</h2>
         <div id="search-bar"></div>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Web site Mordekdrums</h3>
-                <p>Création complète du site vitrine de
-                    <a href='https://mordekdrums.onrender.com/'>Mordekdrums</a>
-                    — de l'imagination au déploiement — en autonomie
-                    totale sur 2 semaines. Première expérience de déploiement gratuit en production, qui m'a appris à
-                    gérer l'ensemble d'un projet web de A à Z : design, développement front et back, et mise en ligne.
-                    Un projet qui a vraiment renforcé mon autonomie.
-                    <br>
-                    Projet réalisé seul avec des consignes claires et détaillées.
-                </p>
-                <img src="assets/MordekdrumsWebSite.jpg" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">JS</span>
-                    <span class="tech-tag">Render</span>
-                    <span class="tech-tag">WebSite</span>
+        <div class="section" id="projects">
+            <h2><i class="bi bi-file-earmark-code"></i> Projets</h2>
+            <div id="search-bar"></div>
+
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <h3>Web site Mordekdrums</h3>
+                    <p class="project-short-desc">Création complète du site vitrine de <a
+                            href="https://mordekdrums.onrender.com/">Mordekdrums</a> dans le cadre d’un stage, réalisée en autonomie totale sur 2 semaines...</p>
+
+                    <button class="open-modal-btn" data-title="Web site Mordekdrums"
+                        data-desc="Création complète du site vitrine de Mordekdrums dans le cadre d’un stage, réalisée en autonomie totale sur 2 semaines. Le projet avait pour objectif de créer une plateforme pour un créateur de contenu jouant à des jeux comme Elden Ring, Fortnite ou Rocket League avec une batterie comme contrôleur principal.
+                        Première vraie expérience full-stack : développement frontend et backend avec Express, intégration des APIs YouTube et Twitch, puis déploiement en production sur Render. La partie la plus complexe a été l’intégration du stream Twitch, notamment les problèmes de performances et de lag provoqués par l’embed sur certaines sections du site.
+                        Ce projet m’a appris les bases concrètes du backend web, du déploiement en production et de l’organisation complète d’un projet web de A à Z."
+                        data-images="assets/MordekdrumsWebSite.jpg,assets/MordekdrumsWebSite_2.jpg,assets/MordekdrumsWebSite_3.jpg"
+                        data-link="https://mordekdrums.onrender.com/">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JS</span>
+                        <span class="tech-tag">Render</span>
+                        <span class="tech-tag">WebSite</span>
+                    </div>
+                    <span class="date-tag" data-date="13/08/2025">07/2025</span>
                 </div>
-                <span class="date-tag" data-date="13/08/2025">07/2025</span>
-            </div>
-            <div class="project-card">
-                <h3>Hello Bricky</h3>
-                <p>Breakout 2D réalisé en binôme en 2 semaines. Je me suis occupé des plateformes, des collisions et du
-                    style visuel du jeu. Projet sans difficulté majeure — mais une révélation importante : j'aime bien
-                    Hello Kitty.
-                    <br>
-                    <a href="https://github.com/GamingCampus-MillieBourgois-25-26/3d-geometry-hello-kitty">Github</a>
-                </p>
-                <img src="assets/hellobricky.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">SFML</span>
-                    <span class="tech-tag">2D</span>
-                    <span class="tech-tag">Breakout</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">PinkParody</span>
-                    <span class="tech-tag">Game</span>
+
+                <div class="project-card">
+                    <h3>Hello Bricky</h3>
+                    <p class="project-short-desc">Breakout 2D développé en binôme sous SFML en 2 semaines. J’ai conçu...</p>
+
+                    <button class="open-modal-btn" data-title="Hello Bricky"
+                        data-desc="Breakout 2D développé en binôme sous SFML en 2 semaines. J’ai conçu la gestion des collisions, les plateformes ainsi qu’une grande partie de l’identité visuelle du jeu autour d’un style volontairement enfantin inspiré de Hello Kitty.
+                        Le projet utilisait une architecture séparant le gameplay des librairies techniques, avec notamment une bibliothèque mathématique entièrement réécrite comprenant vecteurs, quaternions et outils utilitaires.
+                        Même si le gameplay restait relativement simple, ce projet m’a permis d’apprendre à mieux répartir les tâches et à travailler efficacement en binôme."
+                        data-images="assets/hellobricky_2.png,assets/hellobricky.png,assets/hellobricky_3.png"
+                        data-link="https://github.com/GamingCampus-MillieBourgois-25-26/3d-geometry-hello-kitty">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">SFML</span>
+                        <span class="tech-tag">2D</span>
+                        <span class="tech-tag">Breakout</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">PinkParody</span>
+                        <span class="tech-tag">Game</span>
+                    </div>
+                    <span class="date-tag" data-date="19/10/2025">10/2025</span>
                 </div>
-                <span class="date-tag" data-date="19/10/2025">10/2025</span>
-            </div>
-            <div class="project-card">
-                <h3>Pink Paradox</h3>
-                <p>Runner 2D horizontal réalisé en trinôme en 2 semaines. J'ai pris en charge les obstacles, les
-                    collisions, le gamestate et le style. Principal défi : maintenir la dynamique d'équipe face à un
-                    coéquipier peu impliqué. Une première leçon concrète sur la gestion des collaborations en milieu de
-                    projet.
-                    <br>
-                    <a href="https://github.com/Quest-Education-Group/par-2-atari-s1p2-08">Github</a>
-                </p>
-                <img src="assets/pinkparadox.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">SFML</span>
-                    <span class="tech-tag">2D</span>
-                    <span class="tech-tag">Runner</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">PinkParody</span>
-                    <span class="tech-tag">Game</span>
+
+                <div class="project-card">
+                    <h3>Pink Paradox</h3>
+                    <p class="project-short-desc">Runner 2D horizontal développé en trinôme sous SFML en 2 semaines. J’ai pris en charge...</p>
+
+                    <button class="open-modal-btn" data-title="Pink Paradox"
+                        data-desc="Runner 2D horizontal développé en trinôme sous SFML en 2 semaines. J’ai pris en charge les obstacles, les collisions ainsi qu’une partie du style visuel du jeu.
+                        Le gameplay reposait sur une difficulté progressive : plus le joueur franchissait d’obstacles, plus leur vitesse augmentait afin d’accélérer le rythme de la partie.
+                        La principale difficulté du projet n’était pas technique mais humaine. L’un des membres de l’équipe étant peu impliqué, j’ai dû reprendre davantage de travail afin de maintenir l’avancement du projet et garantir un résultat final propre et jouable."
+                        data-images="assets/pinkparadox_2.png,assets/pinkparadox.png,assets/pinkparadox_3.png"
+                        data-link="https://github.com/Quest-Education-Group/par-2-atari-s1p2-08">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">SFML</span>
+                        <span class="tech-tag">2D</span>
+                        <span class="tech-tag">Runner</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">PinkParody</span>
+                        <span class="tech-tag">Game</span>
+                    </div>
+                    <span class="date-tag" data-date="31/10/2025">10/2025</span>
                 </div>
-                <span class="date-tag" data-date="31/10/2025">10/2025</span>
-            </div>
-            <div class="project-card">
-                <h3>Épées 3D</h3>
-                <p>Modélisation complète d'épées en solo sur une semaine — de l'imagination au rendu final dans Unreal
-                    Engine 5, en passant par la retopologie et le texturing. Première plongée dans Blender, apprise
-                    entièrement sur le tas. Ce projet m'a donné les bases solides que j'utilise encore aujourd'hui.
-                </p>
-                <img src="assets/Blender.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">Blender</span>
-                    <span class="tech-tag">Low poly</span>
-                    <span class="tech-tag">Weapon</span>
-                    <span class="tech-tag">3D</span>
-                    <span class="tech-tag">Model</span>
+
+                <div class="project-card">
+                    <h3>Épées 3D</h3>
+                    <p class="project-short-desc">Projet de modélisation 3D réalisé en solo sur une semaine autour de la création d’épées inspirées de...</p>
+
+                    <button class="open-modal-btn" data-title="Épées 3D"
+                        data-desc="Projet de modélisation 3D réalisé en solo sur une semaine autour de la création d’épées inspirées de Sword Art Online, notamment Elucidator et Double Dark.
+                        Première vraie découverte de Blender, avec un apprentissage initial accompagné par un intervenant puis beaucoup d’expérimentation en autonomie. J’ai réalisé l’ensemble du pipeline de production : modélisation, retopologie, texturing puis rendu sous Unreal Engine 5.
+                        La retopologie a représenté la partie la plus complexe du projet. Ce travail m’a donné les bases que j’utilise encore aujourd’hui pour créer rapidement des modèles simples sous Blender."
+                        data-images="assets/Blender.png,assets/Blender_2.png,assets/Blender_3.png" data-link=""> Lire
+                        plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Blender</span>
+                        <span class="tech-tag">Low poly</span>
+                        <span class="tech-tag">Weapon</span>
+                        <span class="tech-tag">3D</span>
+                        <span class="tech-tag">Model</span>
+                    </div>
+                    <span class="date-tag" data-date="27/11/2025">11/2025</span>
                 </div>
-                <span class="date-tag" data-date="27/11/2025">11/2025</span>
-            </div>
-            <div class="project-card">
-                <h3>Arena Shooter</h3>
-                <p>Arena shooter 3D FPS réalisé en équipe de 4 sur 3 semaines, en collaboration avec des artistes du
-                    Gaming Campus. En tant que chef d'équipe, j'ai géré les ennemis et le gamestate, tout en découvrant
-                    Unreal Engine 5 pour la première fois. Le vrai challenge : garder le projet sur les rails malgré une
-                    équipe inégale. Résultat — un jeu complet livré, et une bonne dose de self-control acquise.
-                    <br>
-                    <a href="https://github.com/WilliamRaoF/ArenaShooter_2025">Github</a>
-                </p>
-                <img src="assets/UnrealEngine.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">Unreal Engine</span>
-                    <span class="tech-tag">Blueprints</span>
-                    <span class="tech-tag">AI</span>
-                    <span class="tech-tag">3D</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">Game</span>
+
+                <div class="project-card">
+                    <h3>Arena Shooter</h3>
+                    <p class="project-short-desc">Arena shooter FPS 3D réalisé sous Unreal Engine 5 en équipe de 4 sur 3 semaines, en collaboration avec...</p>
+
+                    <button class="open-modal-btn" data-title="Arena Shooter"
+                        data-desc="Arena shooter FPS 3D réalisé sous Unreal Engine 5 en équipe de 4 sur 3 semaines, en collaboration avec des artistes du Gaming Campus.
+                        En tant que chef d’équipe, je répartissais les tâches tout en développant le système d’ennemis et une partie du gameplay. Le jeu reposait sur des vagues d’ennemis suivies d’un boss final, avec plusieurs comportements différents : ennemis corps à corps agressifs, unités volantes lançant des projectiles et ennemis de type mage protégés par un bouclier vulnérable uniquement dans le dos.
+                        La gestion des ennemis volants et de leur gravité sous UE5 a représenté la partie la plus complexe techniquement. Ce projet a surtout été une première immersion sérieuse dans Unreal Engine 5 et dans la gestion d’une équipe de production."
+                        data-images="assets/UnrealEngine.png"
+                        data-link="https://github.com/WilliamRaoF/ArenaShooter_2025">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Unreal Engine</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">AI</span>
+                        <span class="tech-tag">3D</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Game</span>
+                    </div>
+                    <span class="date-tag" data-date="08/12/2025">12/2025</span>
                 </div>
-                <span class="date-tag" data-date="08/12/2025">12/2025</span>
-            </div>
-            <div class="project-card">
-                <h3>GPS pathfinding</h3>
-                <p>Visualisateur de pathfinding sur la carte d'Île-de-France, développé en C++ avec SFML et ImGui.
-                    Implémentation de trois algorithmes : A*, Dijkstra et BFS. Projet technique réalisé en solo, qui m'a
-                    permis de vraiment creuser la théorie des graphes et de la rendre interactive et visuelle.
-                </p>
-                <img src="assets/GPSPathfinding.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">SFML</span>
-                    <span class="tech-tag">ImGui</span>
-                    <span class="tech-tag">Algo</span>
-                    <span class="tech-tag">2D</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">PinkParody</span>
-                    <span class="tech-tag">App</span>
+
+                <div class="project-card">
+                    <h3>GPS pathfinding</h3>
+                    <p class="project-short-desc">Visualisateur de pathfinding développé en solo en C++ avec SFML et ImGui, utilisant...</p>
+
+                    <button class="open-modal-btn" data-title="GPS pathfinding"
+                        data-desc="Visualisateur de pathfinding développé en solo en C++ avec SFML et ImGui, utilisant des données réelles de la carte d’Île-de-France fournies au format CSV.
+                        J’ai entièrement réimplémenté les algorithmes A*, Dijkstra et BFS afin de comparer visuellement leurs comportements et les chemins générés. L’interface ImGui permettait de manipuler facilement les paramètres et d’observer les résultats en temps réel.
+                        Le principal défi du projet a été l’optimisation de l’affichage de plusieurs centaines de milliers de vertex sous SFML. Ce projet m’a permis de mieux comprendre les algorithmes de graphes, l’optimisation d’affichage et l’utilisation d’interfaces debug avec ImGui."
+                        data-images="assets/GPSPathfinding.png" data-link=""> Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">SFML</span>
+                        <span class="tech-tag">ImGui</span>
+                        <span class="tech-tag">Algo</span>
+                        <span class="tech-tag">2D</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">PinkParody</span>
+                        <span class="tech-tag">App</span>
+                    </div>
+                    <span class="date-tag" data-date="29/01/2026">01/2026</span>
                 </div>
-                <span class="date-tag" data-date="29/01/2026">01/2026</span>
-            </div>
-            <div class="project-card">
-                <h3>Arena Dash</h3>
-                <p>Mini-jeu multijoueur en temps réel sur Unreal Engine 5. Une exploration des mécaniques réseau et du
-                    multijoueur, un domaine que je souhaitais découvrir après l'Arena Shooter. Projet court mais dense
-                    en apprentissages techniques.
-                    <br>
-                    <a href="https://github.com/0ri0546/MultijoueurTempsReel">Github</a>
-                </p>
-                <img src="assets/multi.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">Unreal Engine</span>
-                    <span class="tech-tag">Blueprints</span>
-                    <span class="tech-tag">3D</span>
-                    <span class="tech-tag">Multi</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">Game</span>
+
+                <div class="project-card">
+                    <h3>Arena Dash</h3>
+                    <p class="project-short-desc">Mini-jeu multijoueur en temps réel développé sous Unreal Engine 5 autour d’un objectif simple : récupérer...</p>
+
+                    <button class="open-modal-btn" data-title="Arena Dash"
+                        data-desc="Mini-jeu multijoueur en temps réel développé sous Unreal Engine 5 autour d’un objectif simple : récupérer plus d’orbes d’énergie que son adversaire.
+                        Réalisé entièrement en solo, ce projet était avant tout une exploration des systèmes réseau d’UE5 et de la réplication. J’ai développé toute la logique multijoueur ainsi que la synchronisation des éléments de gameplay entre les joueurs.
+                        La principale difficulté a été la gestion des interfaces utilisateur en environnement réseau, qui a demandé une importante phase de debugging. Ce projet m’a permis de découvrir concrètement le fonctionnement de la réplication sous Unreal Engine."
+                        data-images="assets/multi.png" data-link="https://github.com/0ri0546/MultijoueurTempsReel">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Unreal Engine</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">3D</span>
+                        <span class="tech-tag">Multi</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Game</span>
+                    </div>
+                    <span class="date-tag" data-date="29/01/2026">01/2026</span>
                 </div>
-                <span class="date-tag" data-date="29/01/2026">01/2026</span>
-            </div>
-            <div class="project-card">
-                <h3>Carnaval Engine</h3>
-                <p>Moteur de jeu 3D custom réalisé en 5 semaines en C++ avec OpenGL. J'ai pris en charge le rendu, les
-                    shaders, la gestion des scènes, les managers et le système de save/load — soit l'essentiel du
-                    moteur. Première confrontation sérieuse avec la programmation bas niveau et OpenGL, et une
-                    révélation : c'est exactement ce que j'aime faire. Le plus gros défi n'était pas technique — c'était
-                    de faire avancer l'équipe.
-                    <br>
-                    <a href="https://github.com/GamingCampus-MillieBourgois-25-26/moteur-3d-carnaval">Github</a>
-                </p>
-                <img src="assets/carnaval.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">OpenGL</span>
-                    <span class="tech-tag">CMake</span>
-                    <span class="tech-tag">GLFW</span>
-                    <span class="tech-tag">ImGui</span>
-                    <span class="tech-tag">FMod</span>
-                    <span class="tech-tag">BulletPhysics</span>
-                    <span class="tech-tag">3D</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">Engine</span>
+
+                <div class="project-card">
+                    <h3>Carnaval Engine</h3>
+                    <p class="project-short-desc">Moteur de jeu 3D custom développé en C++ avec OpenGL en 5 semaines...</p>
+
+                    <button class="open-modal-btn" data-title="Carnaval Engine"
+                        data-desc="Moteur de jeu 3D custom développé en C++ avec OpenGL en 5 semaines.
+                        J’ai pris en charge une grande partie du moteur : rendu, shaders de lumière, gestion des scènes, managers ainsi que le système de sauvegarde et chargement en JSON. Le projet utilisait différents systèmes maison comme un Scene Manager et plusieurs managers dédiés aux ressources et objets du moteur.
+                        Les shaders OpenGL ont représenté la partie la plus complexe techniquement et ma première vraie immersion dans la programmation graphique bas niveau. Malgré l’absence d’architecture claire dans le projet, cette expérience m’a confirmé que le développement moteur et la programmation bas niveau étaient les domaines qui me passionnaient le plus."
+                        data-images="assets/carnaval.png"
+                        data-link="https://github.com/GamingCampus-MillieBourgois-25-26/moteur-3d-carnaval">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">OpenGL</span>
+                        <span class="tech-tag">CMake</span>
+                        <span class="tech-tag">GLFW</span>
+                        <span class="tech-tag">ImGui</span>
+                        <span class="tech-tag">FMod</span>
+                        <span class="tech-tag">BulletPhysics</span>
+                        <span class="tech-tag">3D</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Engine</span>
+                    </div>
+                    <span class="date-tag" data-date="08/03/2026">03/2026</span>
                 </div>
-                <span class="date-tag" data-date="08/03/2026">03/2026</span>
-            </div>
-            <div class="project-card">
-                <h3>Crazy Gambling Casino</h3>
-                <p>Casino/Shooter réalisé en 39h non-stop lors d'une Game Jam organisée par Gaming Campus, sur le thème
-                    "Just One More Game". Au sein d'une équipe de 19 personnes, je me suis occupé des ennemis. Principal
-                    apprentissage : le sommeil, c'est pas optionnel.
-                    <br>
-                    <a href="https://github.com/kuromiaou/OneLastGame">Github</a>
-                </p>
-                <img src="assets/onelastgame.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">Unreal Engine</span>
-                    <span class="tech-tag">Blueprints</span>
-                    <span class="tech-tag">Gambling</span>
-                    <span class="tech-tag">Shooter</span>
-                    <span class="tech-tag">3D</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">Game Jam</span>
-                    <span class="tech-tag">Game</span>
+
+                <div class="project-card">
+                    <h3>Crazy Gambling Casino</h3>
+                    <p class="project-short-desc">Jeu hybride Casino/Shooter réalisé en 39 heures lors d’une Game Jam organisée par...</p>
+
+                    <button class="open-modal-btn" data-title="Crazy Gambling Casino"
+                        data-desc="Jeu hybride Casino/Shooter réalisé en 39 heures lors d’une Game Jam organisée par Gaming Campus sur le thème “Just One More Game”.
+                        Le gameplay mélangeait gestion d’argent dans un casino, achat d’armes et phases de combat pour gagner davantage de ressources. Au sein d’une équipe de 19 personnes répartie entre une partie casino et une partie shooter, je me suis occupé du développement des ennemis : unités corps à corps, ennemis à distance et boss.
+                        Une grande partie du travail reposait sur l’intégration continue des fonctionnalités développées en parallèle par les différentes équipes. Le ragdoll a notamment été développé dans l’urgence en fin de production. Cette jam m’a surtout appris la réalité du développement intensif en équipe."
+                        data-images="assets/onelastgame.png,assets/onelastgame_2.png,assets/onelastgame_3.png,assets/onelastgame_4.png,assets/onelastgame_5.png"
+                        data-link="https://github.com/kuromiaou/OneLastGame">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Unreal Engine</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">Gambling</span>
+                        <span class="tech-tag">Shooter</span>
+                        <span class="tech-tag">3D</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Game Jam</span>
+                        <span class="tech-tag">Game</span>
+                    </div>
+                    <span class="date-tag" data-date="15/03/2026">03/2026</span>
                 </div>
-                <span class="date-tag" data-date="15/03/2026">03/2026</span>
-            </div>
-            <div class="project-card">
-                <h3>Endless Rogue</h3>
-                <p>Rogue-like RPG tour par tour réalisé en trinôme sur 4 semaines, sur un moteur custom... disons,
-                    exigeant. J'ai développé les ennemis, l'inventaire, les artefacts, les logs et toute la partie
-                    ImGui. Malgré les contraintes du moteur, ce projet m'a confirmé que le gameplay programming est ce
-                    qui me passionne vraiment.
-                    <br>
-                    <a href="https://github.com/AmadeoPonceGTech/EndlessRogue-Termina-">Github</a>
-                </p>
-                <img src="assets/endlessrogue.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">3D</span>
-                    <span class="tech-tag">ImGui</span>
-                    <span class="tech-tag">RPG</span>
-                    <span class="tech-tag">Rogue</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">Game</span>
+
+                <div class="project-card">
+                    <h3>Endless Rogue</h3>
+                    <p class="project-short-desc">Rogue-like RPG tour par tour développé en trinôme sur 4 semaines à l’aide d’un moteur custom sans documentation...</p>
+
+                    <button class="open-modal-btn" data-title="Endless Rogue"
+                        data-desc="Rogue-like RPG tour par tour développé en trinôme sur 4 semaines à l’aide d’un moteur custom sans documentation, créé en seulement quelques jours par un autre étudiant.
+                        J’ai développé les systèmes d’ennemis, l’inventaire, les artefacts, les logs ainsi qu’une grande partie de l’interface ImGui utilisée pour afficher les informations du jeu.
+                        Le système d’inventaire reposait sur des collections d’artefacts et différentes ressources permettant de modifier les statistiques et capacités des personnages. Au total, 39 artefacts différents ont été créés afin de proposer des effets variés et plusieurs styles de gameplay.
+                        Malgré les contraintes techniques du moteur, ce projet m’a confirmé que le gameplay programming et la création de systèmes de jeu complexes étaient les domaines qui me passionnaient le plus."
+                        data-images="assets/endlessrogue.png"
+                        data-link="https://github.com/AmadeoPonceGTech/EndlessRogue-Termina-">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">3D</span>
+                        <span class="tech-tag">ImGui</span>
+                        <span class="tech-tag">RPG</span>
+                        <span class="tech-tag">Rogue</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">Game</span>
+                    </div>
+                    <span class="date-tag" data-date="09/04/2026">04/2026</span>
                 </div>
-                <span class="date-tag" data-date="09/04/2026">04/2026</span>
-            </div>
-            <div class="project-card">
-                <h3>Rotator</h3>
-                <p>Outil Windows permettant de faire pivoter n'importe quelle page web, développé seul en une nuit. Pas
-                    de difficulté technique particulière — juste l'envie de résoudre un problème réel. Ce projet m'a
-                    donné quelque chose de rare : la satisfaction de livrer un outil concret et utile.
-                    <br>
-                    <a href="https://github.com/0ri0546/Rotator">Github</a>
-                </p>
-                <img src="assets/rotator.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">JS</span>
-                    <span class="tech-tag">HTML</span>
-                    <span class="tech-tag">CSS</span>
-                    <span class="tech-tag">Blue-neo</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">App</span>
+
+                <div class="project-card">
+                    <h3>Rotator</h3>
+                    <p class="project-short-desc">Outil Windows développé seul en une nuit permettant de faire pivoter n’importe quelle page web...</p>
+
+                    <button class="open-modal-btn" data-title="Rotator"
+                        data-desc="Outil Windows développé seul en une nuit permettant de faire pivoter n’importe quelle page web dans une fenêtre personnalisée.
+                        Le projet est né d’un besoin très concret : pouvoir regarder des vidéos depuis mon lit sans devoir tourner la tête. L’application fonctionne en chargeant une URL dans une fenêtre custom pouvant être orientée librement.
+                        Développé pendant une nuit d’insomnie, ce projet n’avait pas pour objectif la complexité technique mais la création rapide d’un outil réellement utile au quotidien — au point d’être encore utilisé régulièrement aujourd’hui."
+                        data-images="assets/rotator.png" data-link="https://github.com/0ri0546/Rotator">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">JS</span>
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">Blue-neo</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">App</span>
+                    </div>
+                    <span class="date-tag" data-date="09/04/2026">04/2026</span>
                 </div>
-                <span class="date-tag" data-date="09/04/2026">04/2026</span>
-            </div>
-            <div class="project-card">
-                <h3>ReNote</h3>
-                <p>Éditeur de texte complet avec Regex personnalisable, développé seul en une après-midi. Même
-                    philosophie que Rotator : construire quelque chose de simple, propre et réellement utile. Preuve
-                    qu'on n'a pas besoin de semaines pour créer de la valeur.
-                    <br>
-                    <a href="https://github.com/0ri0546/ReNote">Github</a>
-                </p>
-                <img src="assets/renote.png" alt="">
-                <div class="tech-tags">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Regex</span>
-                    <span class="tech-tag">Blue-neo</span>
-                    <span class="tech-tag">Git</span>
-                    <span class="tech-tag">App</span>
+
+                <div class="project-card">
+                    <h3>ReNote</h3>
+                    <p class="project-short-desc">Petit éditeur de texte avec support de Regex personnalisables, développé seul en une après-midi...</p>
+
+                    <button class="open-modal-btn" data-title="ReNote"
+                        data-desc="Petit éditeur de texte avec support de Regex personnalisables, développé seul en une après-midi.
+                        Le projet avait surtout pour objectif de créer rapidement un outil présentable et fonctionnel autour de la manipulation de texte et des expressions régulières. L’utilisateur pouvait définir ses propres Regex afin d’effectuer des recherches et traitements personnalisés directement dans l’éditeur.
+                        Plus qu’un projet technique complexe, ReNote était avant tout une expérimentation autour du prototypage rapide et de la capacité à produire un outil fonctionnel en très peu de temps."
+                        data-images="assets/renote.png" data-link="https://github.com/0ri0546/ReNote">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Regex</span>
+                        <span class="tech-tag">Blue-neo</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">App</span>
+                    </div>
+                    <span class="date-tag" data-date="17/04/2026">04/2026</span>
                 </div>
-                <span class="date-tag" data-date="17/04/2026">04/2026</span>
+
+                <div class="project-card">
+                    <h3>Earniverse</h3>
+                    <p class="project-short-desc">Coming soon...</p>
+
+                    <button class="open-modal-btn" data-title="Earniverse"
+                        data-desc="Coming soon..."
+                        data-images="assets/earniverse.png" data-link="">
+                        Lire plus
+                    </button>
+
+                    <div class="tech-tags">
+                        <span class="tech-tag">Unreal Engine</span>
+                        <span class="tech-tag">Blueprints</span>
+                        <span class="tech-tag">3D</span>
+                        <span class="tech-tag">Perforce</span>
+                        <span class="tech-tag">...</span>
+                    </div>
+                    <span class="date-tag" data-date="22/06/2026">06/2026</span>
+                </div>
+
             </div>
         </div>
     </div>
@@ -371,7 +450,8 @@
         <div class="social-links">
 
             <a href="mailto:lmarcucci@gaming.tech"><i class="bi bi-envelope"></i> Email</a>
-            <a href="https://www.linkedin.com/in/lucas-marcucci-230151334/"><i class="bi bi-linkedin"></i> LinkedIn</a>
+            <a href="https://www.linkedin.com/in/lucas-marcucci-230151334/"><i class="bi bi-linkedin"></i>
+                LinkedIn</a>
             <a href="https://github.com/0ri0546"><i class="bi bi-github"></i> GitHub</a>
         </div>
     </div>
@@ -379,6 +459,26 @@
     <footer>
         <p>&copy; 2026 - Portfolio Gaming Campus | Développé avec passion</p>
     </footer>
+
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <div class="carousel-container">
+                <button class="carousel-btn prev-btn"><i class="bi bi-chevron-left"></i></button>
+                <div class="carousel-slide">
+                    <img id="modal-img" src="" alt="Capture du projet">
+                </div>
+                <button class="carousel-btn next-btn"><i class="bi bi-chevron-right"></i></button>
+            </div>
+
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <button id="modal-link" class="modal-github-btn" style="display: none;">
+                <i class="bi bi-github"></i> Voir le code
+            </button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

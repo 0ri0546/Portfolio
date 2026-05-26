@@ -43,14 +43,15 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.skill-card, .project-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease-out';
+    // FIX PERFORMANCE & CONFLITS : On anime uniquement l'opacité et le transform, pas "all"
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(el);
 });
 
 // Search Bar
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const searchBarContainer = document.getElementById('search-bar');
-    
+
     searchBarContainer.innerHTML = `
         <div class="search-container">
             <i class="bi bi-search search-icon"></i>
@@ -70,10 +71,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         projectCards.forEach(card => {
             const title = card.querySelector('h3').textContent.toLowerCase();
-            
+
             const tags = Array.from(card.querySelectorAll('.tech-tag'))
                 .map(tag => tag.textContent.toLowerCase());
-            
+
             const matchesTitle = title.includes(searchTerm);
             const matchesTags = tags.some(tag => tag.includes(searchTerm));
 
@@ -106,12 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.focus();
     }
 
-    // Event listeners
     searchInput.addEventListener('input', searchProjects);
     clearButton.addEventListener('click', clearSearch);
 
-    // Recherche avec Enter
-    searchInput.addEventListener('keydown', function(e) {
+    searchInput.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             clearSearch();
         }
@@ -126,12 +125,12 @@ let index = 0;
 function typeFullParagraph() {
     if (index < fullText.length) {
         displayElement.textContent = fullText.substring(0, index + 1);
-        
+
         const cursor = document.createElement('span');
         cursor.className = 'cursor';
         cursor.textContent = '|';
         displayElement.appendChild(cursor);
-        
+
         index++;
         setTimeout(typeFullParagraph, 30);
     }
@@ -145,7 +144,7 @@ let currentPosition = 0;
 
 document.addEventListener('keydown', (e) => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
-        return; 
+        return;
     }
 
     const key = e.key.toLowerCase();
@@ -153,7 +152,7 @@ document.addEventListener('keydown', (e) => {
 
     if (key === target) {
         currentPosition++;
-        
+
         if (key.includes('arrow')) e.preventDefault();
 
         if (currentPosition === konamiCode.length) {
@@ -164,16 +163,93 @@ document.addEventListener('keydown', (e) => {
     } else {
         currentPosition = (key === konamiCode[0]) ? 1 : 0;
     }
-    
+
     console.log(`Progression Konami : ${currentPosition}/${konamiCode.length}`);
 });
 
 function activateKonami() {
     console.log("🎯 CODE KONAMI VALIDÉ !");
     document.body.classList.toggle('konami-active');
-    
+
     if (sfxKonami) {
         sfxKonami.currentTime = 0;
         sfxKonami.play().catch(err => console.log("L'audio attend une interaction :", err));
     }
 }
+
+// --- modale ---
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("project-modal");
+    const closeModal = document.querySelector(".close-modal");
+    const openModalBtns = document.querySelectorAll(".open-modal-btn");
+
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-description");
+    const modalImg = document.getElementById("modal-img");
+    const modalLink = document.getElementById("modal-link");
+    const prevBtn = document.querySelector(".prev-btn");
+    const nextBtn = document.querySelector(".next-btn");
+
+    let currentImages = [];
+    let currentImgIndex = 0;
+    let activeProjectLink = "";
+
+    function updateCarousel() {
+        if (currentImages.length > 0) {
+            modalImg.src = currentImages[currentImgIndex];
+        }
+    }
+
+    openModalBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const title = btn.getAttribute("data-title");
+            const desc = btn.getAttribute("data-desc");
+            activeProjectLink = btn.getAttribute("data-link"); // Sauvegarde du lien
+
+            currentImages = btn.getAttribute("data-images").split(",");
+            currentImgIndex = 0;
+
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+
+            if (activeProjectLink && activeProjectLink.trim() !== "") {
+                modalLink.style.display = "inline-block";
+            } else {
+                modalLink.style.display = "none";
+            }
+
+            updateCarousel();
+            modal.classList.add("active");
+        });
+    });
+
+    modalLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation(); // Empêche la modale de se fermer
+        if (activeProjectLink && activeProjectLink.trim() !== "") {
+            window.open(activeProjectLink, '_blank', 'noopener,noreferrer');
+        }
+    });
+
+    nextBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentImgIndex = (currentImgIndex + 1) % currentImages.length;
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        currentImgIndex = (currentImgIndex - 1 + currentImages.length) % currentImages.length;
+        updateCarousel();
+    });
+
+    closeModal.addEventListener("click", () => {
+        modal.classList.remove("active");
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.classList.remove("active");
+        }
+    });
+});
