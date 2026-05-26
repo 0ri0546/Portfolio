@@ -253,3 +253,73 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// --- EFFET DRAG & SPRING FIN DE SÉANCE (STYLE BALATRO) ---
+const setupBalatroEffect = () => {
+    // Sélection de la photo de profil, des skill cards et des project cards
+    const draggableElements = document.querySelectorAll('header img, .skill-card, .project-card');
+
+    draggableElements.forEach(el => {
+        el.classList.add('grab-target');
+
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        el.addEventListener('mousedown', (e) => {
+            // Empêche le drag d'ouvrir la modale si on clique sur le bouton "Lire plus"
+            if (e.target.closest('button') || e.target.closest('a')) return;
+
+            isDragging = true;
+            el.classList.remove('grab-returning');
+            
+            startX = e.clientX - currentX;
+            startY = e.clientY - currentY;
+
+            el.style.zIndex = "1000"; // Passe l'élément au-dessus des autres
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+
+            currentX = e.clientX - startX;
+            currentY = e.clientY - startY;
+
+            // Calcul d'une légère rotation basée sur la vitesse/direction du mouvement
+            const rotateX = -currentY * 0.05; 
+            const rotateY = currentX * 0.05;
+
+            // Application de la translation + la rotation dynamique (effet Balatro)
+            el.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+        });
+
+        const stopDragging = () => {
+            if (!isDragging) return;
+            isDragging = false;
+
+            // On réinitialise les positions
+            currentX = 0;
+            currentY = 0;
+
+            // On ajoute la classe de transition élastique
+            el.classList.add('grab-returning');
+            
+            // Remise à zéro de la transformation
+            el.style.transform = `translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1)`;
+
+            // On nettoie le z-index après l'animation de retour
+            setTimeout(() => {
+                if (!isDragging) el.style.zIndex = "";
+            }, 500);
+        };
+
+        window.addEventListener('mouseup', stopDragging);
+        // Au cas où la souris sort de la fenêtre du navigateur
+        window.addEventListener('blur', stopDragging); 
+    });
+};
+
+// Initialisation de l'effet une fois le script chargé
+setupBalatroEffect();
