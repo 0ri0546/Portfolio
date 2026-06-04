@@ -1,24 +1,21 @@
-/* Fond de la modale (caché par défaut) */
 .modal {
     display: none; 
     position: fixed;
-    z-index: 9999; /* Toujours au-dessus du reste */
+    z-index: 9999;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px); /* Effet de flou arrière-plan moderne */
+    backdrop-filter: blur(5px);
     justify-content: center;
     align-items: center;
 }
 
-/* Affichage actif de la modale via JS */
 .modal.active {
     display: flex;
 }
 
-/* Fenêtre de contenu */
 .modal-content {
     background-color: #1a1a1a;
     color: #fff;
@@ -32,7 +29,6 @@
     animation: fadeIn 0.3s ease-in-out;
 }
 
-/* Bouton Fermer */
 .close-modal {
     position: absolute;
     right: 20px;
@@ -44,7 +40,6 @@
 }
 .close-modal:hover { color: #fff; }
 
-/* Conteneur Carrousel */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -64,26 +59,50 @@
     object-fit: contain;
 }
 
-/* Boutons de navigation du carrousel */
 .carousel-btn {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: none;
-    padding: 12px;
-    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    /* Cercle parfait */
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    font-size: 1.2rem;
-    transition: background 0.2s;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 1.1rem;
+    cursor: pointer;
     z-index: 10;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease-in-out;
 }
-.carousel-btn:hover { background: rgba(255, 255, 255, 0.3); }
+
+.carousel-container:hover .carousel-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.05);
+}
+
 .prev-btn { left: 15px; }
 .next-btn { right: 15px; }
 
-/* Bouton Lire plus sur les cartes */
 .open-modal-btn {
-    background-color: #ff007f; /* Ajuste selon ta charte graphique */
+    background-color: #ff007f;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -95,7 +114,6 @@
 }
 .open-modal-btn:hover { transform: scale(1.05); }
 
-/* Bouton GitHub dans la modale */
 .modal-github-btn {
     display: inline-block;
     margin-top: 15px;
@@ -107,8 +125,69 @@
 }
 .modal-github-btn:hover { background: #444; }
 
-/* Animation d'apparition */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+    
+    .modal {
+        align-items: flex-start;
+        padding: 60px 10px 20px 10px; 
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 20px 15px;
+        margin-top: 0; 
+        margin-bottom: 20px;
+    }
+
+    .carousel-container {
+        margin-top: 5vh;
+        height: 230px;
+        margin-bottom: 15px;
+    }
+
+    .carousel-slide img {
+        max-height: 230px;
+    }
+
+    .carousel-btn {
+        opacity: 1 !important;
+        visibility: visible !important;
+        
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+        
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .carousel-btn:hover {
+        transform: translateY(-50%) scale(1);
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .prev-btn { left: 8px; }
+    .next-btn { right: 8px; }
+
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 2.2rem;
+        padding: 5px;
+    }
+
+    .modal-github-btn {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        font-size: 1rem;
+    }
 }

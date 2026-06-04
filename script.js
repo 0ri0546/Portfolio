@@ -25,7 +25,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Animation au scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -100px 0px'
@@ -43,7 +42,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.skill-card, .project-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    // FIX PERFORMANCE & CONFLITS : On anime uniquement l'opacité et le transform, pas "all"
     el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(el);
 });
@@ -204,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
             const title = btn.getAttribute("data-title");
             const desc = btn.getAttribute("data-desc");
-            activeProjectLink = btn.getAttribute("data-link"); // Sauvegarde du lien
+            activeProjectLink = btn.getAttribute("data-link");
 
             currentImages = btn.getAttribute("data-images").split(",");
             currentImgIndex = 0;
@@ -254,9 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// --- EFFET DRAG & SPRING FIN DE SÉANCE (STYLE BALATRO) ---
 const setupBalatroEffect = () => {
-    // Sélection de la photo de profil, des skill cards et des project cards
     const draggableElements = document.querySelectorAll('header img, .skill-card, .project-card');
 
     draggableElements.forEach(el => {
@@ -269,7 +265,6 @@ const setupBalatroEffect = () => {
         let currentY = 0;
 
         el.addEventListener('mousedown', (e) => {
-            // Empêche le drag d'ouvrir la modale si on clique sur le bouton "Lire plus"
             if (e.target.closest('button') || e.target.closest('a')) return;
 
             isDragging = true;
@@ -278,7 +273,7 @@ const setupBalatroEffect = () => {
             startX = e.clientX - currentX;
             startY = e.clientY - currentY;
 
-            el.style.zIndex = "1000"; // Passe l'élément au-dessus des autres
+            el.style.zIndex = "1000";
         });
 
         window.addEventListener('mousemove', (e) => {
@@ -287,11 +282,9 @@ const setupBalatroEffect = () => {
             currentX = e.clientX - startX;
             currentY = e.clientY - startY;
 
-            // Calcul d'une légère rotation basée sur la vitesse/direction du mouvement
             const rotateX = -currentY * 0.05; 
             const rotateY = currentX * 0.05;
 
-            // Application de la translation + la rotation dynamique (effet Balatro)
             el.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
         });
 
@@ -299,27 +292,83 @@ const setupBalatroEffect = () => {
             if (!isDragging) return;
             isDragging = false;
 
-            // On réinitialise les positions
             currentX = 0;
             currentY = 0;
 
-            // On ajoute la classe de transition élastique
             el.classList.add('grab-returning');
             
-            // Remise à zéro de la transformation
             el.style.transform = `translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1)`;
 
-            // On nettoie le z-index après l'animation de retour
             setTimeout(() => {
                 if (!isDragging) el.style.zIndex = "";
             }, 500);
         };
 
         window.addEventListener('mouseup', stopDragging);
-        // Au cas où la souris sort de la fenêtre du navigateur
         window.addEventListener('blur', stopDragging); 
     });
 };
 
-// Initialisation de l'effet une fois le script chargé
 setupBalatroEffect();
+
+const avatar = document.getElementById("avatar");
+
+let lastShake = 0;
+const SHAKE_THRESHOLD = 12;
+
+function triggerShake() {
+    if (!avatar) return;
+
+    avatar.classList.remove("shake-avatar");
+
+    void avatar.offsetWidth;
+
+    avatar.classList.add("shake-avatar");
+}
+
+function handleMotion(event) {
+    const acc = event.accelerationIncludingGravity;
+
+    if (!acc) return;
+
+    const x = acc.x || 0;
+    const y = acc.y || 0;
+    const z = acc.z || 0;
+
+    const magnitude = Math.sqrt(x * x + y * y + z * z);
+
+    const now = Date.now();
+
+    if (magnitude > SHAKE_THRESHOLD && now - lastShake > 1000) {
+        lastShake = now;
+        triggerShake();
+    }
+}
+
+if (
+    typeof DeviceMotionEvent !== "undefined" &&
+    typeof DeviceMotionEvent.requestPermission === "function"
+) {
+    document.addEventListener(
+        "click",
+        async () => {
+            try {
+                const permission =
+                    await DeviceMotionEvent.requestPermission();
+
+                if (permission === "granted") {
+                    window.addEventListener(
+                        "devicemotion",
+                        handleMotion
+                    );
+                    console.log("Accéléromètre activé");
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        },
+        { once: true }
+    );
+} else {
+    window.addEventListener("devicemotion", handleMotion);
+}
