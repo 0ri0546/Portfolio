@@ -1,4 +1,3 @@
-/* Style appliqué uniquement quand on survole ou attrape un élément */
 .grab-target {
     cursor: grab;
     user-select: none;

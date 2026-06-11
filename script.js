@@ -162,11 +162,9 @@ document.addEventListener('keydown', (e) => {
         currentPosition = (key === konamiCode[0]) ? 1 : 0;
     }
 
-    console.log(`Progression Konami : ${currentPosition}/${konamiCode.length}`);
 });
 
 function activateKonami() {
-    console.log("🎯 CODE KONAMI VALIDÉ !");
     document.body.classList.toggle('konami-active');
 
     if (sfxKonami) {
@@ -361,7 +359,6 @@ if (
                         "devicemotion",
                         handleMotion
                     );
-                    console.log("Accéléromètre activé");
                 }
             } catch (error) {
                 console.error(error);
@@ -371,4 +368,26 @@ if (
     );
 } else {
     window.addEventListener("devicemotion", handleMotion);
+}
+
+function toggleExperiences() {
+  const inner = document.getElementById('exp-timeline');
+  const fade = document.getElementById('exp-fade');
+  const btn = document.getElementById('exp-btn');
+  const label = document.getElementById('exp-label');
+  const isOpen = inner.classList.toggle('expanded');
+  fade.classList.toggle('hidden', isOpen);
+  btn.classList.toggle('open', isOpen);
+  label.textContent = isOpen ? 'Voir moins' : 'Voir plus';
+}
+
+function toggleProjects() {
+    const inner = document.getElementById('proj-timeline');
+    const fade = document.getElementById('proj-fade');
+    const btn = document.getElementById('proj-btn');
+    const label = document.getElementById('proj-label');
+    const isOpen = inner.classList.toggle('expanded');
+    fade.classList.toggle('hidden', isOpen);
+    btn.classList.toggle('open', isOpen);
+    label.textContent = isOpen ? 'Voir moins' : 'Voir plus';
 }
