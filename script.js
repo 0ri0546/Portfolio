@@ -267,7 +267,7 @@ const setupBalatroEffect = () => {
 
             isDragging = true;
             el.classList.remove('grab-returning');
-            
+
             startX = e.clientX - currentX;
             startY = e.clientY - currentY;
 
@@ -280,7 +280,7 @@ const setupBalatroEffect = () => {
             currentX = e.clientX - startX;
             currentY = e.clientY - startY;
 
-            const rotateX = -currentY * 0.05; 
+            const rotateX = -currentY * 0.05;
             const rotateY = currentX * 0.05;
 
             el.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
@@ -294,7 +294,7 @@ const setupBalatroEffect = () => {
             currentY = 0;
 
             el.classList.add('grab-returning');
-            
+
             el.style.transform = `translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1)`;
 
             setTimeout(() => {
@@ -303,7 +303,7 @@ const setupBalatroEffect = () => {
         };
 
         window.addEventListener('mouseup', stopDragging);
-        window.addEventListener('blur', stopDragging); 
+        window.addEventListener('blur', stopDragging);
     });
 };
 
@@ -371,14 +371,14 @@ if (
 }
 
 function toggleExperiences() {
-  const inner = document.getElementById('exp-timeline');
-  const fade = document.getElementById('exp-fade');
-  const btn = document.getElementById('exp-btn');
-  const label = document.getElementById('exp-label');
-  const isOpen = inner.classList.toggle('expanded');
-  fade.classList.toggle('hidden', isOpen);
-  btn.classList.toggle('open', isOpen);
-  label.textContent = isOpen ? 'Voir moins' : 'Voir plus';
+    const inner = document.getElementById('exp-timeline');
+    const fade = document.getElementById('exp-fade');
+    const btn = document.getElementById('exp-btn');
+    const label = document.getElementById('exp-label');
+    const isOpen = inner.classList.toggle('expanded');
+    fade.classList.toggle('hidden', isOpen);
+    btn.classList.toggle('open', isOpen);
+    label.textContent = isOpen ? 'Voir moins' : 'Voir plus';
 }
 
 function toggleProjects() {
