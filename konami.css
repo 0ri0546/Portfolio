@@ -8,7 +8,7 @@
 }
 
 .konami-active .project-card, 
-.konami-active .skill-card,
+.konami-active .progress-fill,
 .konami-active .timeline::before {
     animation: neon-rainbow 2s linear infinite !important;
     border-width: 3px !important;

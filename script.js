@@ -2,19 +2,21 @@ const sfxKonami = new Audio('assets/konamiSound.mp3');
 sfxKonami.preload = 'auto';
 sfxKonami.volume = 0.4;
 
-const particlesContainer = document.getElementById('particles');
-for (let i = 0; i < 50; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.bottom = Math.random() * 20 + '%';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.opacity = '0';
-    particle.style.animationDelay = Math.random() * 20 + 's';
-    particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
-    particlesContainer.appendChild(particle);
+function initParticles() {
+    const particlesContainer = document.getElementById('particles');
+    if (!particlesContainer) return; // Sécurité si l'élément n'existe pas
+
+    for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * -20 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+        particlesContainer.appendChild(particle);
+    }
 }
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -30,7 +32,7 @@ const observerOptions = {
     rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const fadeInObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -43,11 +45,10 @@ document.querySelectorAll('.skill-card, .project-card').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-    observer.observe(el);
+    fadeInObserver.observe(el);
 });
 
-// Search Bar
-document.addEventListener('DOMContentLoaded', function () {
+function initSearchBar() {
     const searchBarContainer = document.getElementById('search-bar');
 
     searchBarContainer.innerHTML = `
@@ -113,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clearSearch();
         }
     });
-});
+}
 
 const fullText = `Étudiant en 2ème année au Gaming Campus, je me forme au développement de jeux vidéo avec une approche volontairement généraliste : gameplay programming, moteurs custom, multijoueur, outils, 3D... Je crois qu'un bon développeur doit comprendre l'ensemble d'un projet, pas seulement sa petite brique. Ce qui me motive, c'est de construire des choses qui fonctionnent vraiment, que ce soit un moteur 3D en OpenGL, un jeu bouclé en 39h lors d'une Game Jam, ou un petit outil utilitaire que j'utilise moi-même au quotidien. Chaque projet est une occasion d'apprendre quelque chose de nouveau et de me pousser un peu plus loin. Curieux par nature, j'aime autant plonger dans les bas niveaux du code que collaborer avec des artistes pour livrer une expérience de jeu complète. Mon objectif : devenir un développeur polyvalent, capable de s'adapter à n'importe quel contexte et de contribuer à chaque étape de la création d'un jeu. `;
 
@@ -136,7 +137,6 @@ function typeFullParagraph() {
 
 window.addEventListener('load', typeFullParagraph);
 
-/* Konami easter egg */
 const konamiCode = ['arrowup', 'arrowup', 'arrowdown', 'arrowdown', 'arrowleft', 'arrowright', 'arrowleft', 'arrowright', 'b', 'a'];
 let currentPosition = 0;
 
@@ -173,8 +173,7 @@ function activateKonami() {
     }
 }
 
-// --- modale ---
-document.addEventListener("DOMContentLoaded", () => {
+function initProjectModal() {
     const modal = document.getElementById("project-modal");
     const closeModal = document.querySelector(".close-modal");
     const openModalBtns = document.querySelectorAll(".open-modal-btn");
@@ -193,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCarousel() {
         if (currentImages.length > 0) {
             modalImg.src = currentImages[currentImgIndex];
+            modalImg.alt = `Capture d'écran de ${modalTitle.textContent}`;
         }
     }
 
@@ -221,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modalLink.addEventListener("click", (e) => {
         e.preventDefault();
-        e.stopPropagation(); // Empêche la modale de se fermer
+        e.stopPropagation();
         if (activeProjectLink && activeProjectLink.trim() !== "") {
             window.open(activeProjectLink, '_blank', 'noopener,noreferrer');
         }
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
             modal.classList.remove("active");
         }
     });
-});
+}
 
 const setupBalatroEffect = () => {
     const draggableElements = document.querySelectorAll('header img, .skill-card, .project-card');
@@ -391,3 +391,34 @@ function toggleProjects() {
     btn.classList.toggle('open', isOpen);
     label.textContent = isOpen ? 'Voir moins' : 'Voir plus';
 }
+
+function initProgressBars() {
+    const progressBars = document.querySelectorAll('.progress-bar');
+
+    const progressObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fill = entry.target.querySelector('.progress-fill');
+                const level = entry.target.getAttribute('data-level');
+
+                setTimeout(() => {
+                    fill.style.width = level + '%';
+                    fill.classList.add('animated');
+                }, 100);
+
+                progressObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    progressBars.forEach(bar => progressObserver.observe(bar));
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initParticles();
+    initSearchBar();
+    initProjectModal();
+    initProgressBars();
+});

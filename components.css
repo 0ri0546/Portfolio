@@ -116,55 +116,65 @@ nav a:hover {
     color: #10b981;
 }
 
-.bento-icon {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 2.5rem;
-    opacity: 0.12;
-    /* Très subtil */
-    transition: transform 0.4s ease, opacity 0.4s ease;
-    z-index: 1;
+/* Progressbar Skills */
+.skills-progressbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.skill-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    background: #1e293b;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
-    border-color: rgba(255, 255, 255, 0.2);
-    cursor: default;
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
-.skill-card:hover .bento-icon {
-    transform: scale(1.3) rotate(-10deg);
-    opacity: 0.25;
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
-.skill-card.large {
-    grid-column: span 2 !important;
-    grid-row: span 2 !important;
-    justify-content: center;
+.skill-header i {
+    font-size: 1.2rem;
+    color: #00ffff;
 }
 
-.skill-card.medium {
-    grid-column: span 2 !important;
+.skill-header h3 {
+    color: #f8fafc;
+    font-size: 1rem;
+    margin: 0;
 }
 
-.skill-card.wide-bottom {
-    grid-column: span 3 !important;
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-.skill-card::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    filter: blur(60px);
-    opacity: 0.15;
-    z-index: 1;
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8, #00ffff);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.progress-fill.animated {
+    width: 100%;
+}
+
+.level-label {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 600;
 }
 
 .theme-code::before {
@@ -609,6 +619,13 @@ footer {
         padding: 1rem 1rem;
         border: 1px solid #00ffff;
         border-radius: 7px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-progressbar {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
 

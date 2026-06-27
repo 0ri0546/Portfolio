@@ -14,13 +14,13 @@
     <meta property="og:title" content="Lucas Marcucci - Portfolio Développeur de Jeux Vidéo">
     <meta property="og:description"
         content="Développeur de jeux vidéo formé à Gaming Campus. 15+ projets : jeux 2D/3D, moteurs custom, web, outils.">
-    <meta property="og:image" content="https://0ri0546.github.io/Portfolio/assets/og_image.png">
+    <meta property="og:image" content="https://0ri0546.github.io/Portfolio/assets/og_image.webp">
     <meta property="og:url" content="https://0ri0546.github.io/Portfolio/">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Lucas Marcucci - Portfolio Développeur de Jeux Vidéo">
-    <meta name="twitter:image" content="https://0ri0546.github.io/Portfolio/assets/og_image.png">
+    <meta name="twitter:image" content="https://0ri0546.github.io/Portfolio/assets/og_image.webp">
 
     <!-- Google Analytics 4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VLEW0NH2KH"></script>
@@ -45,13 +45,15 @@
 </head>
 
 <body>
+    <div class="particles" id="particles"></div>
     <header>
-        <img id="avatar" src="assets/Lucas_01.jpg" alt="Lucas Marcucci">
+        <img id="avatar" src="assets/Lucas_01.webp" alt="Lucas Marcucci">
         <h2 class="colored_title">Lucas Marcucci - Portfolio</h2>
         <nav>
             <a href="#about"><i class="bi bi-info-square"></i> À Propos</a>
             <a href="#skills"><i class="bi bi-dpad"></i> Compétences</a>
             <a href="#projects"><i class="bi bi-file-earmark-code"></i> Projets</a>
+            <a href="#experiences"><i class="bi bi-briefcase"></i> Expériences</a>
             <a href="#contact"><i class="bi bi-person-lines-fill"></i> Contact</a>
         </nav>
     </header>
@@ -66,54 +68,104 @@
 
     <div class="section skill-box" id="skills">
         <h2><i class="bi bi-dpad"></i> Compétences</h2>
-        <div class="bento-grid">
-            <div class="skill-card large theme-code" style="--level: 100%;">
-                <i class="bi bi-terminal-fill bento-icon"></i>
-                <h3>C++</h3>
-                <p>Programmation orientée objet, librairie SFML / ImGui</p>
-            </div>
-            <div class="skill-card theme-code" style="--level: 50%;">
-                <i class="bi bi-hash bento-icon"></i>
-                <h3>Python</h3>
-                <p>Algorithmes, pygame, tkinter</p>
-            </div>
-            <div class="skill-card theme-tools" style="--level: 75%;">
-                <i class="bi bi-git bento-icon"></i>
-                <h3>Git</h3>
-                <p>Versioning, travail collaboratif</p>
+        <div class="skills-progressbar">
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-terminal-fill"></i>
+                    <h3>C++</h3>
+                </div>
+                <div class="progress-bar" data-level="100">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Avancé</span>
             </div>
 
-            <div class="skill-card medium theme-gamedev" style="--level: 50%;">
-                <i class="bi bi-unity bento-icon"></i>
-                <h3>Unreal Engine</h3>
-                <p>Blueprints, multiplayer, architecture de jeu</p>
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-hash"></i>
+                    <h3>Web Design</h3>
+                </div>
+                <div class="progress-bar" data-level="95">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Avancé</span>
             </div>
 
-            <div class="skill-card medium theme-gamedev highlight" style="--level: 20%;">
-                <i class="bi bi-gpu-card bento-icon"></i>
-                <h3>OpenGL</h3>
-                <p>API graphique bas niveau (Carnaval Engine)</p>
-            </div>
-            <div class="skill-card theme-design" style="--level: 30%;">
-                <i class="bi bi-box-seam bento-icon"></i>
-                <h3>Blender</h3>
-                <p>Modélisation 3D et texturing</p>
-            </div>
-            <div class="skill-card theme-tools" style="--level: 80%;">
-                <i class="bi bi-command bento-icon"></i>
-                <h3>IDE</h3>
-                <p>VS, CLion, debugging</p>
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-brush"></i>
+                    <h3>Canva</h3>
+                </div>
+                <div class="progress-bar" data-level="90">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Avancé</span>
             </div>
 
-            <div class="skill-card wide-bottom theme-design" style="--level: 95%;">
-                <i class="bi bi-palette-fill bento-icon"></i>
-                <h3>Web Design</h3>
-                <p>HTML5, CSS3, JavaScript et interfaces modernes</p>
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-command"></i>
+                    <h3>IDE</h3>
+                </div>
+                <div class="progress-bar" data-level="80">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Avancé</span>
             </div>
-            <div class="skill-card theme-design" style="--level: 90%;">
-                <i class="bi bi-brush bento-icon"></i>
-                <h3>Canva</h3>
-                <p>Design graphique et visuels</p>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-git"></i>
+                    <h3>Git</h3>
+                </div>
+                <div class="progress-bar" data-level="75">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Intermédiaire</span>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-hash"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="progress-bar" data-level="50">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Intermédiaire</span>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-unity"></i>
+                    <h3>Unreal Engine</h3>
+                </div>
+                <div class="progress-bar" data-level="50">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Intermédiaire</span>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-box-seam"></i>
+                    <h3>Blender</h3>
+                </div>
+                <div class="progress-bar" data-level="30">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Débutant</span>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <i class="bi bi-gpu-card"></i>
+                    <h3>OpenGL</h3>
+                </div>
+                <div class="progress-bar" data-level="20">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="level-label">Débutant</span>
             </div>
         </div>
     </div>
@@ -126,16 +178,16 @@
             <div class="timeline-inner" id="proj-timeline">
                 <div class="projects-grid">
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="0">
                         <h3>Web site Mordekdrums</h3>
                         <p class="project-short-desc">Création complète du site vitrine de
-                            href="https://mordekdrums.onrender.com/">Mordekdrums</a> dans le cadre d'un stage, réalisée
+                            <a href="https://mordekdrums.onrender.com/">Mordekdrums</a> dans le cadre d'un stage, réalisée
                             en autonomie totale sur 2 semaines...</p>
                         <button class="open-modal-btn" data-title="Web site Mordekdrums"
                             data-desc="Création complète du site vitrine de Mordekdrums dans le cadre d'un stage, réalisée en autonomie totale sur 2 semaines. Le projet avait pour objectif de créer une plateforme pour un créateur de contenu jouant à des jeux comme Elden Ring, Fortnite ou Rocket League avec une batterie comme contrôleur principal.
                         Première vraie expérience full-stack : développement frontend et backend avec Express, intégration des APIs YouTube et Twitch, puis déploiement en production sur Render. La partie la plus complexe a été l'intégration du stream Twitch, notamment les problèmes de performances et de lag provoqués par l'embed sur certaines sections du site.
                         Ce projet m'a appris les bases concrètes du backend web, du déploiement en production et de l'organisation complète d'un projet web de A à Z."
-                            data-images="assets/MordekdrumsWebSite.jpg,assets/MordekdrumsWebSite_2.jpg,assets/MordekdrumsWebSite_3.jpg"
+                            data-images="assets/MordekdrumsWebSite.webp,assets/MordekdrumsWebSite_2.webp,assets/MordekdrumsWebSite_3.webp"
                             data-link="https://mordekdrums.onrender.com/">
                             Lire plus
                         </button>
@@ -149,7 +201,7 @@
                         <span class="date-tag" data-date="13/08/2025">07/2025</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="0">
                         <h3>Hello Bricky</h3>
                         <p class="project-short-desc">Breakout 2D développé en binôme sous SFML en 2 semaines. J'ai
                             conçu...
@@ -158,7 +210,7 @@
                             data-desc="Breakout 2D développé en binôme sous SFML en 2 semaines. J'ai conçu la gestion des collisions, les plateformes ainsi qu'une grande partie de l'identité visuelle du jeu autour d'un style volontairement enfantin inspiré de Hello Kitty.
                         Le projet utilisait une architecture séparant le gameplay des librairies techniques, avec notamment une bibliothèque mathématique entièrement réécrite comprenant vecteurs, quaternions et outils utilitaires.
                         Même si le gameplay restait relativement simple, ce projet m'a permis d'apprendre à mieux répartir les tâches et à travailler efficacement en binôme."
-                            data-images="assets/hellobricky_2.png,assets/hellobricky.png,assets/hellobricky_3.png"
+                            data-images="assets/hellobricky_2.webp,assets/hellobricky.webp,assets/hellobricky_3.webp"
                             data-link="https://github.com/GamingCampus-MillieBourgois-25-26/3d-geometry-hello-kitty">
                             Lire plus
                         </button>
@@ -174,7 +226,7 @@
                         <span class="date-tag" data-date="19/10/2025">10/2025</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="0">
                         <h3>Pink Paradox</h3>
                         <p class="project-short-desc">Runner 2D horizontal développé en trinôme sous SFML en 2 semaines.
                             J'ai pris en charge...</p>
@@ -182,7 +234,7 @@
                             data-desc="Runner 2D horizontal développé en trinôme sous SFML en 2 semaines. J'ai pris en charge les obstacles, les collisions ainsi qu'une partie du style visuel du jeu.
                         Le gameplay reposait sur une difficulté progressive : plus le joueur franchissait d'obstacles, plus leur vitesse augmentait afin d'accélérer le rythme de la partie.
                         La principale difficulté du projet n'était pas technique mais humaine. L'un des membres de l'équipe étant peu impliqué, j'ai dû reprendre davantage de travail afin de maintenir l'avancement du projet et garantir un résultat final propre et jouable."
-                            data-images="assets/pinkparadox_2.png,assets/pinkparadox.png,assets/pinkparadox_3.png"
+                            data-images="assets/pinkparadox_2.webp,assets/pinkparadox.webp,assets/pinkparadox_3.webp"
                             data-link="https://github.com/Quest-Education-Group/par-2-atari-s1p2-08">
                             Lire plus
                         </button>
@@ -198,7 +250,7 @@
                         <span class="date-tag" data-date="31/10/2025">10/2025</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="0">
                         <h3>Épées 3D</h3>
                         <p class="project-short-desc">Projet de modélisation 3D réalisé en solo sur une semaine autour
                             de la
@@ -207,7 +259,7 @@
                             data-desc="Projet de modélisation 3D réalisé en solo sur une semaine autour de la création d'épées inspirées de Sword Art Online, notamment Elucidator et Double Dark.
                         Première vraie découverte de Blender, avec un apprentissage initial accompagné par un intervenant puis beaucoup d'expérimentation en autonomie. J'ai réalisé l'ensemble du pipeline de production : modélisation, retopologie, texturing puis rendu sous Unreal Engine 5.
                         La retopologie a représenté la partie la plus complexe du projet. Ce travail m'a donné les bases que j'utilise encore aujourd'hui pour créer rapidement des modèles simples sous Blender."
-                            data-images="assets/Blender.png,assets/Blender_2.png,assets/Blender_3.png" data-link="">
+                            data-images="assets/Blender.webp,assets/Blender_2.webp,assets/Blender_3.webp" data-link="">
                             Lire plus
                         </button>
                         <div class="tech-tags">
@@ -220,7 +272,7 @@
                         <span class="date-tag" data-date="27/11/2025">11/2025</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="5">
                         <h3>Arena Shooter</h3>
                         <p class="project-short-desc">Arena shooter FPS 3D réalisé sous Unreal Engine 5 en équipe de 4
                             sur 3
@@ -229,7 +281,7 @@
                             data-desc="Arena shooter FPS 3D réalisé sous Unreal Engine 5 en équipe de 4 sur 3 semaines, en collaboration avec des artistes du Gaming Campus.
                         En tant que chef d'équipe, je répartissais les tâches tout en développant le système d'ennemis et une partie du gameplay. Le jeu reposait sur des vagues d'ennemis suivies d'un boss final, avec plusieurs comportements différents : ennemis corps à corps agressifs, unités volantes lançant des projectiles et ennemis de type mage protégés par un bouclier vulnérable uniquement dans le dos.
                         La gestion des ennemis volants et de leur gravité sous UE5 a représenté la partie la plus complexe techniquement. Ce projet a surtout été une première immersion sérieuse dans Unreal Engine 5 et dans la gestion d'une équipe de production."
-                            data-images="assets/UnrealEngine.png"
+                            data-images="assets/UnrealEngine.webp"
                             data-link="https://github.com/WilliamRaoF/ArenaShooter_2025">
                             Lire plus
                         </button>
@@ -244,7 +296,7 @@
                         <span class="date-tag" data-date="08/12/2025">12/2025</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="4">
                         <h3>GPS pathfinding</h3>
                         <p class="project-short-desc">Visualisateur de pathfinding développé en solo en C++ avec SFML et
                             ImGui, utilisant...</p>
@@ -252,7 +304,7 @@
                             data-desc="Visualisateur de pathfinding développé en solo en C++ avec SFML et ImGui, utilisant des données réelles de la carte d'Île-de-France fournies au format CSV.
                         J'ai entièrement réimplémenté les algorithmes A*, Dijkstra et BFS afin de comparer visuellement leurs comportements et les chemins générés. L'interface ImGui permettait de manipuler facilement les paramètres et d'observer les résultats en temps réel.
                         Le principal défi du projet a été l'optimisation de l'affichage de plusieurs centaines de milliers de vertex sous SFML. Ce projet m'a permis de mieux comprendre les algorithmes de graphes, l'optimisation d'affichage et l'utilisation d'interfaces debug avec ImGui."
-                            data-images="assets/GPSPathfinding.png" data-link="">
+                            data-images="assets/GPSPathfinding.webp" data-link="">
                             Lire plus
                         </button>
                         <div class="tech-tags">
@@ -268,7 +320,7 @@
                         <span class="date-tag" data-date="29/01/2026">01/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="3">
                         <h3>Arena Dash</h3>
                         <p class="project-short-desc">Mini-jeu multijoueur en temps réel développé sous Unreal Engine 5
                             autour d'un objectif simple : récupérer...</p>
@@ -276,7 +328,7 @@
                             data-desc="Mini-jeu multijoueur en temps réel développé sous Unreal Engine 5 autour d'un objectif simple : récupérer plus d'orbes d'énergie que son adversaire.
                         Réalisé entièrement en solo, ce projet était avant tout une exploration des systèmes réseau d'UE5 et de la réplication. J'ai développé toute la logique multijoueur ainsi que la synchronisation des éléments de gameplay entre les joueurs.
                         La principale difficulté a été la gestion des interfaces utilisateur en environnement réseau, qui a demandé une importante phase de debugging. Ce projet m'a permis de découvrir concrètement le fonctionnement de la réplication sous Unreal Engine."
-                            data-images="assets/multi.png" data-link="https://github.com/0ri0546/MultijoueurTempsReel">
+                            data-images="assets/multi.webp" data-link="https://github.com/0ri0546/MultijoueurTempsReel">
                             Lire plus
                         </button>
                         <div class="tech-tags">
@@ -290,7 +342,7 @@
                         <span class="date-tag" data-date="29/01/2026">01/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="10">
                         <h3>Carnaval Engine</h3>
                         <p class="project-short-desc">Moteur de jeu 3D custom développé en C++ avec OpenGL en 5
                             semaines...
@@ -299,7 +351,7 @@
                             data-desc="Moteur de jeu 3D custom développé en C++ avec OpenGL en 5 semaines.
                         J'ai pris en charge une grande partie du moteur : rendu, shaders de lumière, gestion des scènes, managers ainsi que le système de sauvegarde et chargement en JSON. Le projet utilisait différents systèmes maison comme un Scene Manager et plusieurs managers dédiés aux ressources et objets du moteur.
                         Les shaders OpenGL ont représenté la partie la plus complexe techniquement et ma première vraie immersion dans la programmation graphique bas niveau. Malgré l'absence d'architecture claire dans le projet, cette expérience m'a confirmé que le développement moteur et la programmation bas niveau étaient les domaines qui me passionnaient le plus."
-                            data-images="assets/carnaval.png"
+                            data-images="assets/carnaval.webp"
                             data-link="https://github.com/GamingCampus-MillieBourgois-25-26/moteur-3d-carnaval">
                             Lire plus
                         </button>
@@ -318,14 +370,14 @@
                         <span class="date-tag" data-date="08/03/2026">03/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="7">
                         <h3>Crazy Gambling Casino</h3>
                         <p class="project-short-desc">Jeu hybride Casino/Shooter réalisé en 39 heures lors d'une Game
                             Jam
                             organisée par...</p>
                         <button class="open-modal-btn" data-title="Crazy Gambling Casino"
-                            data-desc="Jeu hybride Casino/Shooter réalisé en 39 heures lors d'une Game Jam organisée par Gaming Campus sur le thème "
-                            Just One More Game". Le gameplay mélangeait gestion d'argent dans un casino, achat d'armes
+                            data-desc="Jeu hybride Casino/Shooter réalisé en 39 heures lors d'une Game Jam organisée par Gaming Campus sur le thème «
+                            Just One More Game ». Le gameplay mélangeait gestion d'argent dans un casino, achat d'armes
                             et phases de combat pour gagner davantage de ressources. Au sein d'une équipe de 19
                             personnes répartie entre une partie casino et une partie shooter, je me suis occupé du
                             développement des ennemis : unités corps à corps, ennemis à distance et boss. Une grande
@@ -333,7 +385,7 @@
                             parallèle par les différentes équipes. Le ragdoll a notamment été développé dans l'urgence
                             en fin de production. Cette jam m'a surtout appris la réalité du développement intensif en
                             équipe."
-                            data-images="assets/onelastgame.png,assets/onelastgame_2.png,assets/onelastgame_3.png,assets/onelastgame_4.png,assets/onelastgame_5.png"
+                            data-images="assets/onelastgame.webp,assets/onelastgame_2.webp,assets/onelastgame_3.webp,assets/onelastgame_4.webp,assets/onelastgame_5.webp"
                             data-link="https://github.com/kuromiaou/OneLastGame">
                             Lire plus
                         </button>
@@ -350,7 +402,7 @@
                         <span class="date-tag" data-date="15/03/2026">03/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="4">
                         <h3>Endless Rogue</h3>
                         <p class="project-short-desc">Rogue-like RPG tour par tour développé en trinôme sur 4 semaines à
                             l'aide d'un moteur custom sans documentation...</p>
@@ -359,7 +411,7 @@
                         J'ai développé les systèmes d'ennemis, l'inventaire, les artefacts, les logs ainsi qu'une grande partie de l'interface ImGui utilisée pour afficher les informations du jeu.
                         Le système d'inventaire reposait sur des collections d'artefacts et différentes ressources permettant de modifier les statistiques et capacités des personnages. Au total, 39 artefacts différents ont été créés afin de proposer des effets variés et plusieurs styles de gameplay.
                         Malgré les contraintes techniques du moteur, ce projet m'a confirmé que le gameplay programming et la création de systèmes de jeu complexes étaient les domaines qui me passionnaient le plus."
-                            data-images="assets/endlessrogue.png"
+                            data-images="assets/endlessrogue.webp"
                             data-link="https://github.com/AmadeoPonceGTech/EndlessRogue-Termina-">
                             Lire plus
                         </button>
@@ -375,7 +427,7 @@
                         <span class="date-tag" data-date="09/04/2026">04/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="5">
                         <h3>Rotator</h3>
                         <p class="project-short-desc">Outil Windows développé seul en une nuit permettant de faire
                             pivoter
@@ -384,7 +436,7 @@
                             data-desc="Outil Windows développé seul en une nuit permettant de faire pivoter n'importe quelle page web dans une fenêtre personnalisée.
                         Le projet est né d'un besoin très concret : pouvoir regarder des vidéos depuis mon lit sans devoir tourner la tête. L'application fonctionne en chargeant une URL dans une fenêtre custom pouvant être orientée librement.
                         Développé pendant une nuit d'insomnie, ce projet n'avait pas pour objectif la complexité technique mais la création rapide d'un outil réellement utile au quotidien — au point d'être encore utilisé régulièrement aujourd'hui."
-                            data-images="assets/rotator.png" data-link="https://github.com/0ri0546/Rotator">
+                            data-images="assets/rotator.webp" data-link="https://github.com/0ri0546/Rotator">
                             Lire plus
                         </button>
                         <div class="tech-tags">
@@ -398,7 +450,7 @@
                         <span class="date-tag" data-date="09/04/2026">04/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="1">
                         <h3>ReNote</h3>
                         <p class="project-short-desc">Petit éditeur de texte avec support de Regex personnalisables,
                             développé seul en une après-midi...</p>
@@ -406,7 +458,7 @@
                             data-desc="Petit éditeur de texte avec support de Regex personnalisables, développé seul en une après-midi.
                         Le projet avait surtout pour objectif de créer rapidement un outil présentable et fonctionnel autour de la manipulation de texte et des expressions régulières. L'utilisateur pouvait définir ses propres Regex afin d'effectuer des recherches et traitements personnalisés directement dans l'éditeur.
                         Plus qu'un projet technique complexe, ReNote était avant tout une expérimentation autour du prototypage rapide et de la capacité à produire un outil fonctionnel en très peu de temps."
-                            data-images="assets/renote.png" data-link="https://github.com/0ri0546/ReNote">
+                            data-images="assets/renote.webp" data-link="https://github.com/0ri0546/ReNote">
                             Lire plus
                         </button>
                         <div class="tech-tags">
@@ -419,13 +471,13 @@
                         <span class="date-tag" data-date="17/04/2026">04/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="3">
                         <h3>RL Overlay</h3>
                         <p class="project-short-desc">Overlay Rocket League développé seul sous Electron. Affiché en
                             transparence par-dessus le jeu, il...</p>
                         <button class="open-modal-btn" data-title="RL Overlay"
                             data-desc="Overlay Rocket League développé seul sous Electron. Affiché en transparence par-dessus le jeu, il récupère en temps réel les données de la partie via l'API RLS et les affiche directement en jeu : MMR et rang de chaque joueur, MMR moyen des équipes, estimation du winrate, plateforme, démolitions. Support des modes 1v1 / 2v2 / 3v3 avec switch rapide via raccourci clavier ou manette. Toutes les icônes de rang ont été dessinées manuellement."
-                            data-images="assets/RLOoverlay.png,assets/RLOdashboard.png"
+                            data-images="assets/RLOoverlay.webp,assets/RLOdashboard.webp"
                             data-link="https://github.com/0ri0546/RLOverlay">
                             Lire plus
                         </button>
@@ -442,7 +494,7 @@
                         <span class="date-tag" data-date="01/06/2026">06/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="6">
                         <h3>DeafTest</h3>
                         <p class="project-short-desc">Jeu de blind test original où le joueur doit retrouver le titre et
                             l'artiste d'une musique...</p>
@@ -450,7 +502,7 @@
                             data-desc="Jeu de blind test original dans lequel les joueurs doivent retrouver le titre et l'artiste d'une musique à partir de seulement deux phrases de paroles, sans jamais entendre la mélodie. Le concept repose sur la reconnaissance de texte et la culture musicale, en retirant l'indice sonore habituel pour proposer un défi différent et plus difficile. 
                         L'hôte de la partie peut choisir librement les musiques utilisées, ce qui permet de créer des sessions personnalisées adaptées à différents styles ou niveaux de difficulté. Le jeu intègre un système de manches qui enchaîne plusieurs extraits, ainsi qu'un système de points permettant de classer les joueurs et de rendre les parties compétitives.
                         Chaque manche met les participants à l'épreuve sur leur rapidité et leur précision, ce qui rend l'expérience dynamique et engageante."
-                            data-images="assets/deaftest1.png,assets/deaftest2.png"
+                            data-images="assets/deaftest1.webp,assets/deaftest2.webp"
                             data-link="http://94.239.13.38:7514/">
                             Lire plus
                         </button>
@@ -465,13 +517,13 @@
                         <span class="date-tag" data-date="09/06/2026">06/2026</span>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-priority="9">
                         <h3>Earniverse</h3>
                         <p class="project-short-desc">Stage de 2ème année sur Unreal Engine 5, j'ai participé au
                             développement d'un Play&Earn metaverse. Durant ce stage...</p>
                         <button class="open-modal-btn" data-title="Earniverse"
                             data-desc="Stage de 2ème année sur Unreal Engine 5, j'ai participé au développement d'un Play&Earn metaverse. Durant ce stage, j'ai notement participé à la créations de multiples pièges, utilisables par lmes joueurs pour créer des épreuves dans le metaverse. J'ai également travaillé sur la rotation des modules placeables par les joueurs, pour leur donner une grande liberté de création."
-                            data-images=" assets/earniverse.png,assets/trapsEarniverse.jpg">
+                            data-images=" assets/earniverse.webp,assets/trapsEarniverse.webp">
                             Lire plus
                         </button>
                         <div class="tech-tags">
@@ -677,7 +729,7 @@
             <div class="carousel-container">
                 <button class="carousel-btn prev-btn"><i class="bi bi-chevron-left"></i></button>
                 <div class="carousel-slide">
-                    <img id="modal-img" src="" alt="Capture du projet">
+                    <img id="modal-img" src="" alt="Capture du projet" loading="lazy">
                 </div>
                 <button class="carousel-btn next-btn"><i class="bi bi-chevron-right"></i></button>
             </div>
