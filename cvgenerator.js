@@ -294,6 +294,7 @@ function generateCV() {
 
     yRight += 61; 
 
+    const pageMaxY = 282;
     const remainingSpace = pageMaxY - yRight;
 
     if (remainingSpace > 20 && experiences.length > 0) {
@@ -318,7 +319,6 @@ function generateCV() {
                 break;
             }
 
-            // Écriture de l'expérience
             doc.setFont("helvetica", "bold");
             doc.setFontSize(8);
             doc.setTextColor(...textMain);
